@@ -11,14 +11,17 @@ Proyecto React -WebPack y Babel
    ../src/index.html
    ../src/index.js
 
+```
 react-webpack-babel
 ├── package.json
 └── src
 ├── index.html
 └── index.js
+```
 
 4. Agregar a index.html
 
+```
 {
 "name": "react-webpack-babel",
 "version": "1.0.0",
@@ -31,6 +34,7 @@ react-webpack-babel
 "author": "Geordano Polanco (gpolanco.com)",
 "license": "MIT"
 }
+```
 
 5. Dependencias:
    5.1) npm install --save-dev webpack webpack-cli webpack-dev-server
@@ -50,6 +54,7 @@ Esta herramienta nos permite utilizar webpack en la linea de comando
 
 # Package.json:
 
+```
 {
 "name": "react-webpack-babel",
 "version": "1.0.0",
@@ -67,20 +72,24 @@ Esta herramienta nos permite utilizar webpack en la linea de comando
 "webpack-dev-server": "^3.11.2"
 }
 }
+```
 
 Nota:
 Fijar las versiones a las últimas actuales quitando el símbolo ^ de está forma estás dependencias siempre estarán en la versión indicada.
 
 - Cambie las versiones a una mas actigua para fines educativos
 
+```
 "devDependencies": {
 "webpack": "4.20.2",
 "webpack-cli": "3.1.2",
 "webpack-dev-server": "3.1.9"
 }
+```
 
 Tenemos el directorio node_modules donde se guardan todas las dependencias del proyecto y el archivo package-lock.json utilizado por npm.
 
+```
 react-webpack-babel
 ├── node_modules
 ├── package-lock.json
@@ -88,6 +97,7 @@ react-webpack-babel
 └── src
 ├── index.html
 └── index.js
+```
 
 # Configuración de webpack:
 
@@ -95,10 +105,12 @@ Nota: Desde webpack v4no es necesario crear un archivo de configuración para su
 
 1. Agregar comandos al package.json
 
+```
 "scripts": {
 "start": "webpack-dev-server",
 "build": "webpack --mode production"
 },
+```
 
 2. Comprimir código: Todas estás acciones se pueden personalizar desde el archivo de configuración webpack-config.js.
 
@@ -115,6 +127,7 @@ Nota: Desde webpack v4no es necesario crear un archivo de configuración para su
 
 const path = require('path');
 
+```
 module.exports = {
 // APP ENTRY POINT
 entry: path.join(\_\_dirname,'src','index.js'),
@@ -138,6 +151,7 @@ devServer: {
 contentBase: path.join(\_\_dirname,'src')
 }
 };
+```
 
 # Entry:
 
@@ -178,11 +192,13 @@ En react trabajaremos utilizando la sintaxis de ECMAScript® 2018 además de jsx
 
 2. Podemos agregar opciones de babel-loader en el archivo webpack.config.js o en un archivo .bablerc para tenr la configuración babel separada.
 
+```
 {
 "presets": [
 "@babel/preset-env"
 ]
 }
+```
 
 ## Nota
 
@@ -201,15 +217,18 @@ En react trabajaremos utilizando la sintaxis de ECMAScript® 2018 además de jsx
 
 2. Configurar @babel/preset-react en el archivo .babelrc
 
+```
 {
 "presets": [
 "@babel/preset-env",
 "@babel/preset-react"
 ]
 }
+```
 
 3. Modificamos el archivo webpack.config.js para agregar la extensión jsx en el babel loader. de esta forma podemos usar .js o .jsx en nuestro archivos.
 
+```
 // ...
 module.exports = {
 // ...
@@ -226,6 +245,7 @@ loader: "babel-loader"
 },
 // ...
 };
+```
 
 # Crear nuestro primer componente
 
@@ -255,15 +275,18 @@ extensions: ['.js', '.json', '.jsx'],
 
 4. Cambiar el puerto del servidor (webpack.config.js)
 
+```
    devServer: {
    contentBase: path.resolve(\_\_dirname, "./src"),
    port: 3500,
    watchContentBase: true,
    open: true
    }
+```
 
 5. Agregar código al index.jsx para llamar al aplicativo
 
+```
 import React from "react";
 import ReactDOM from "react-dom";
 
@@ -275,5 +298,6 @@ ReactDOM.render(
 </React.StrictMode>,
 document.getElementById("root")
 );
+```
 
 # ...............................................
