@@ -23,16 +23,17 @@ react-webpack-babel
 
 ```
 {
-"name": "react-webpack-babel",
-"version": "1.0.0",
-"description": "",
-"main": "index.js",
-"scripts": {
-"test": "echo \"Error: no test specified\" && exit 1"
-},
-"keywords": [],
-"author": "Geordano Polanco (gpolanco.com)",
-"license": "MIT"
+    {
+        "name": "react-webpack-babel",
+        "version": "1.0.0",
+        "description": "",
+        "main": "index.js",
+        "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "Geordano Polanco (gpolanco.com)",
+    "license": "MIT"
 }
 ```
 
@@ -56,21 +57,22 @@ Esta herramienta nos permite utilizar webpack en la linea de comando
 
 ```
 {
-"name": "react-webpack-babel",
-"version": "1.0.0",
-"description": "",
-"main": "index.js",
-"scripts": {
-"test": "echo \"Error: no test specified\" && exit 1"
-},
-"keywords": [],
-"author": "wlopera",
-"license": "MIT",
-"devDependencies": {
-"webpack": "^5.24.2",
-"webpack-cli": "^4.5.0",
-"webpack-dev-server": "^3.11.2"
-}
+    {
+        "name": "react-webpack-babel",
+        "version": "1.0.0",
+        "description": "",
+        "main": "index.js",
+        "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "wlopera",
+    "license": "MIT",
+    "devDependencies": {
+    "webpack": "^5.24.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+    }
 }
 ```
 
@@ -81,9 +83,9 @@ Fijar las versiones a las últimas actuales quitando el símbolo ^ de está form
 
 ```
 "devDependencies": {
-"webpack": "4.20.2",
-"webpack-cli": "3.1.2",
-"webpack-dev-server": "3.1.9"
+    "webpack": "4.20.2",
+    "webpack-cli": "3.1.2",
+    "webpack-dev-server": "3.1.9"
 }
 ```
 
@@ -107,8 +109,8 @@ Nota: Desde webpack v4no es necesario crear un archivo de configuración para su
 
 ```
 "scripts": {
-"start": "webpack-dev-server",
-"build": "webpack --mode production"
+    "start": "webpack-dev-server",
+    "build": "webpack --mode production"
 },
 ```
 
@@ -129,27 +131,27 @@ const path = require('path');
 
 ```
 module.exports = {
-// APP ENTRY POINT
-entry: path.join(\_\_dirname,'src','index.js'),
+    // APP ENTRY POINT
+    entry: path.join(\_\_dirname,'src','index.js'),
 
-// OUTPUT DIRECTORY
-output: {
-path: path.join(\_\_dirname,'public'),
-filename: 'main.bundle.js'
-},
+    // OUTPUT DIRECTORY
+    output: {
+        path: path.join(\_\_dirname,'public'),
+        filename: 'main.bundle.js'
+    },
 
-// EVIROMENT MODE
-mode: process.env.NODE_ENV || 'development',
+    // EVIROMENT MODE
+    mode: process.env.NODE_ENV || 'development',
 
-// PATH RESOLVE
-resolve: {
-modules: [path.resolve(__dirname, 'src'), 'node_modules']
-},
+    // PATH RESOLVE
+    resolve: {
+        modules: [path.resolve(__dirname, 'src'), 'node_modules']
+    },
 
-// DEV SERVER ENTRY POINT
-devServer: {
-contentBase: path.join(\_\_dirname,'src')
-}
+    // DEV SERVER ENTRY POINT
+        devServer: {
+        contentBase: path.join(\_\_dirname,'src')
+    }
 };
 ```
 
@@ -194,9 +196,9 @@ En react trabajaremos utilizando la sintaxis de ECMAScript® 2018 además de jsx
 
 ```
 {
-"presets": [
-"@babel/preset-env"
-]
+    "presets": [
+     "@babel/preset-env"
+    ]
 }
 ```
 
@@ -219,10 +221,10 @@ En react trabajaremos utilizando la sintaxis de ECMAScript® 2018 además de jsx
 
 ```
 {
-"presets": [
-"@babel/preset-env",
-"@babel/preset-react"
-]
+    "presets": [
+        "@babel/preset-env",
+        "@babel/preset-react"
+    ]
 }
 ```
 
@@ -231,19 +233,18 @@ En react trabajaremos utilizando la sintaxis de ECMAScript® 2018 además de jsx
 ```
 // ...
 module.exports = {
-// ...
-module: {
-rules: [
-{
-test: /\.(js|jsx)$/,
-exclude: /node_modules/,
-use: {
-loader: "babel-loader"
-}
-}
-],
-},
-// ...
+    // ...
+    module: {
+        rules: [
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: {
+                loader: "babel-loader"
+            }
+        ],
+    },
+    // ...
 };
 ```
 
@@ -256,9 +257,8 @@ import React from "react";
 
 const App = () => {
 return (
-
 <div>
-<h2>App component!</h2>
+2>App component!</h2>
 </div>
 );
 };
@@ -277,10 +277,10 @@ extensions: ['.js', '.json', '.jsx'],
 
 ```
    devServer: {
-   contentBase: path.resolve(\_\_dirname, "./src"),
-   port: 3500,
-   watchContentBase: true,
-   open: true
+        contentBase: path.resolve(\_\_dirname, "./src"),
+        port: 3500,
+        watchContentBase: true,
+        open: true
    }
 ```
 
@@ -293,10 +293,10 @@ import ReactDOM from "react-dom";
 import App from "./App";
 
 ReactDOM.render(
-<React.StrictMode>
-<App />
-</React.StrictMode>,
-document.getElementById("root")
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>,
+    document.getElementById("root")
 );
 ```
 
