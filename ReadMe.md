@@ -261,3 +261,19 @@ extensions: ['.js', '.json', '.jsx'],
    watchContentBase: true,
    open: true
    }
+
+5. Agregar código al index.jsx para llamar al aplicativo
+
+import React from "react";
+import ReactDOM from "react-dom";
+
+import App from "./App";
+
+ReactDOM.render(
+<React.StrictMode>
+<App />
+</React.StrictMode>,
+document.getElementById("root")
+);
+
+# ...............................................
